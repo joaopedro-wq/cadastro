@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    
+    
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2EFEB ;
+    
+    
+}
+
+header{
+    background-color: cornflowerblue;
+    padding: 10px;
+    color: #F2EFEB;
+    text-align: center;
+}
+
+.title{
+    
+    padding: 10px;
+    text-align: center;
+    
+}
+main{
+    padding: 20px 50px;
+}
+
+.card{
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 15px;
+
+      
+}
+
+.tabela{
+display: grid;
+margin-bottom: 10px;
+
+
+
+
+}
+
+input{
+    background-color: #e9e6e1;
+    padding: 10px;
+    border: 1px solid rgb(8, 52, 134);
+    border-radius: 5px ;
+    outline: 0;
+    margin-top: 4px;
+
+    
+}
+.registerInput:focus, textarea:focus {
+    background-color:wheat ;
+}
+button{
+    padding: 7px 65px;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: cornflowerblue;
+    cursor: pointer;
+    color: #F2EFEB;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(69, 102, 167);
+}
+.content{
+    margin-top: 50px;
+    
+}
+ table{
+    border: 1px solid cornflowerblue;
+    border-collapse: collapse;
+    width: 100%;
+ }
+
+ table th {
+    background-color: #F2EFEB ;
+ }
+ table td {
+    text-align: center;
+ }
+ table td img {
+    width:20px;
+
+ }
+
+ .cursore {
+
+    cursor: pointer;
+ }
