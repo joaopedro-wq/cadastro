@@ -1,21 +1,31 @@
 class Produto {
 
     constructor() {
-        this.id = 1;
+        this.id = 0;
         this.arrayProdutos = [];
         this.editId = null;
     }
 
     
     salvar (){
+
         let produto = this.lerdados();
+
+       
+        if(localStorage.myArray){
+            this.arrayProdutos = JSON.parse(localStorage.getItem('myArray'));
+            
+        }
         
         if(this.validacao(produto) == true){
             if(this.editId == null){
 
                 this.adicionar(produto);
+                localStorage.myArray = JSON.stringify(this.arrayProdutos);
             }else{
+
                 this.atualizacao(this.editId, produto);
+                localStorage.myArray = JSON.stringify(this.arrayProdutos);
             }
         }
         
@@ -60,16 +70,32 @@ class Produto {
     
     // Adicionar o OBJETO produto no ARRAY
     adicionar(produto){
+        
         produto.preco = parseFloat(produto.preco);
-        this.arrayProdutos.push(produto);
-        this.id+=1;
 
+        
+                this.arrayProdutos.push(produto);
+                this.id++;
+                
+               
+            
+        
+    
+            
+    
+           
     }
 
     //printar tabela de produtos
     printarTable(){
+
+        
         let tbody = document.getElementById('tbody');
         tbody.innerText = '';
+        
+        if(localStorage.myArray){
+            this.arrayProdutos = JSON.parse(localStorage.getItem('myArray'));
+        }
 
         for(let i = 0; i < this.arrayProdutos.length; i++){
             let tr = tbody.insertRow();
@@ -140,6 +166,9 @@ class Produto {
     }
 
     deletar(id) {
+        
+     
+
     if(confirm('Deseja realmente apagar o produto ?' )){
 
 
@@ -149,9 +178,11 @@ class Produto {
             if(this.arrayProdutos[i].id == id){
                 this.arrayProdutos.splice(i, 1);
                 tbody.deleteRow(i);
+                localStorage.myArray = JSON.stringify(this.arrayProdutos);
             }
+
         }
-        //console.log(this.arrayProdutos);
+        console.log(this.arrayProdutos);
     }
 
     }
